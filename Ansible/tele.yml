@@ -1,0 +1,8 @@
+---
+- name: Provisioning Web Application 
+  hosts: "{{ app }}"
+  become: true
+  vars_files:
+    - group_vars/teletrack.yml
+  roles:
+    - { role: tele-sampleapp }
