@@ -83,7 +83,7 @@ module "alb" {
 ######
 # Launch configuration and autoscaling group
 ######
-module "tele_asg" {
+module "autoscaling" {
   source = "../modules/autoscaling"
 
   name = "test-asg"
@@ -92,7 +92,7 @@ module "tele_asg" {
 
   image_id           = data.aws_ami.amazon_linux.id
   instance_type      = "t3a.micro"
-  key_name           = "tele"
+  key_name           = "ttrack"
   security_groups    = [data.aws_security_group.default.id, "sg-02442ee979ea4c62d"]
   target_group_arns  = module.alb.target_group_arns
 
@@ -118,4 +118,4 @@ module "tele_asg" {
     },
   ]
 }
-© 2021 GitHub, Inc.
+
