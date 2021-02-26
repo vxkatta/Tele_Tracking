@@ -30,7 +30,7 @@ module "alb" {
 
   target_groups = [
     {
-      name_prefix          = "tele"
+      name_prefix          = "test"
       backend_protocol     = "HTTP"
       backend_port         = 80
       target_type          = "instance"
@@ -48,7 +48,7 @@ module "alb" {
       }
     },
     {
-      name_prefix          = "tele"
+      name_prefix          = "test"
       backend_protocol     = "HTTP"
       backend_port         = 8080
       target_type          = "instance"
