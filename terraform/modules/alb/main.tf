@@ -1,4 +1,4 @@
-resource "aws_lb" "tele_alb" {
+resource "aws_lb" "test_alb" {
   count = var.create_lb ? 1 : 0
 
   name        = var.name
