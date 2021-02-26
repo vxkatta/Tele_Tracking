@@ -1,24 +1,24 @@
-output "tele_alb_id" {
+output "test_alb_id" {
   description = "The ID and ARN of the load balancer we created."
   value       = concat(aws_lb.tele_alb.*.id, [""])[0]
 }
 
-output "tele_alb_arn" {
+output "test_alb_arn" {
   description = "The ID and ARN of the load balancer we created."
   value       = concat(aws_lb.tele_alb.*.arn, [""])[0]
 }
 
-output "tele_alb_dns_name" {
+output "test_alb_dns_name" {
   description = "The DNS name of the load balancer."
   value       = concat(aws_lb.tele_alb.*.dns_name, [""])[0]
 }
 
-output "tele_alb_arn_suffix" {
+output "test_alb_arn_suffix" {
   description = "ARN suffix of our load balancer - can be used with CloudWatch."
   value       = concat(aws_lb.tele_alb.*.arn_suffix, [""])[0]
 }
 
-output "tele_alb_zone_id" {
+output "test_alb_zone_id" {
   description = "The zone_id of the load balancer to assist with creating DNS records."
   value       = concat(aws_lb.tele_alb.*.zone_id, [""])[0]
 }
