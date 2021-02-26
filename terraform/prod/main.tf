@@ -36,7 +36,7 @@ module "elb" {
 ######
 # Launch configuration and autoscaling group
 ######
-module "tele_asg" {
+module "autoscaling" {
   source = "../modules/autoscaling"
 
   name = "test-project-alb"
@@ -46,7 +46,7 @@ module "tele_asg" {
   image_id        = data.aws_ami.amazon_linux.id
   instance_type   = "t3a.micro"
   security_groups = [data.aws_security_group.default.id]
-  load_balancers  = [module.elb.tele_alb_id]
+  load_balancers  = [module.elb.test_project_alb_id]
 
   # Auto scaling group
   asg_name                  = "test-asg"
